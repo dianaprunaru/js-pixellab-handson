@@ -44,4 +44,6 @@ console.warn(
   `Afiseaza fraza “xxx s-a nascut in aaaa.” Foloseste tot anul curent pentru a scadea varsta.`,
 );
 
-console.log(object.name + ' ' + 's-a nascut in ' + '');
+console.log(
+  object.name + ' ' + 's-a nascut in ' + (2022 - object.age).toString() + '.',
+);

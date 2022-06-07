@@ -16,7 +16,7 @@ if (isNaN(number) === true) {
   number = 2;
 }
 
-for (i = 6; i <= 100; i++) {
+for (i = 4; i <= 1000; i++) {
   console.log(i);
 
   if (i % number !== 0) {
