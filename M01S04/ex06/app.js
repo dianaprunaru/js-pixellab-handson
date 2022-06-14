@@ -71,27 +71,30 @@ for (var i = 0; i < person.friends.length; i++) {
 }
 console.log(message);
 
-console.warn(`Folosind un for, afiseaza numarul total de ani pe care il au persoanele din arrayul friends, doar daca varsta este mai mare sau egala cu 30 de ani.
+console.warn(`Folosind un for, afiseaza numarul total de ani pe care
+il au persoanele din arrayul friends, doar daca varsta
+este mai mare sau egala cu 30 de ani.
 `);
 for (var i = 0; i < person.friends.length; i++) {
   var friend = person.friends[i];
-  var ageSum = Math.abs(friend.age + friend.age + friend.age);
+  sum += friend.age;
 
-  if (friend.age[i] >= 30) {
-    console.log(ageSum);
+  if (friend.age >= 30) {
+    console.log(sum);
   }
 }
 // aici, Pixeltabul nu se inverzeste. Ce anume gresesc?
 
-// console.warn(`Folosind un for, afiseaza suma anilor de nastere a persoanelor.`);
-// for (var i = 0; i < person.friends.length; i++) {
-//   var total = (sum += person.friends.age[i] += person.age);
+console.warn(`Folosind un for, afiseaza suma anilor de nastere a persoanelor.`);
+for (var i = 0; i < person.friends.length; i++) {
+  sumPersons += 2022 - person.friends.age + (2022 - person.age);
 
-//   console.log(total);
-// }
+  console.log(sumPersons);
+}
 
 console.warn(
-  ` Afiseaza diferenta de varsta dintre persoana si prietenii din arrayul friends doar daca aceasta este mai mare de 2 ani.`,
+  ` Afiseaza diferenta de varsta dintre persoana si prietenii din arrayul
+  friends doar daca aceasta este mai mare de 2 ani.`,
 );
 for (var i = 0; i < person.friends.length; i++) {
   var friend = person.friends[i];
@@ -104,14 +107,17 @@ for (var i = 0; i < person.friends.length; i++) {
 }
 
 console.warn(
-  `Folosind proprietatea length a arrayului skills si o bucla for, afiseaza in ordine inversa elementele arrayului skills. Atentie, va trebui sa numeri invers, de la length la 0.`,
+  `Folosind proprietatea length a arrayului skills si o bucla for,
+  afiseaza in ordine inversa elementele arrayului skills. Atentie,
+  va trebui sa numeri invers, de la length la 0.`,
 );
 for (var i = person.skills.length - 1; i >= 0; i--) {
   console.log(person.skills[i]);
 }
 
 console.warn(
-  `Folosind obiectul person si un for, afiseaza in consola skillurile pe care le are persoana `,
+  `Folosind obiectul person si un for, afiseaza in consola
+  skillurile pe care le are persoana `,
 );
 
 for (var i = 0; i < person.skills.length; i++) {

@@ -48,7 +48,8 @@ skillKeys.forEach(function (skill) {
 });
 
 console.warn(
-  `Prin aceeasi metoda, afiseaza o lista inversata cu numele complet inversat al prietenilor. `,
+  `Prin aceeasi metoda, afiseaza o lista inversata cu
+  numele complet inversat al prietenilor. `,
 );
 Object.keys(person.friends)
   .reverse()
@@ -59,7 +60,8 @@ Object.keys(person.friends)
   });
 
 console.warn(
-  `Afiseaza propozitia: “Prietenii mei sunt Larry, Steven si Carol.” folosind Object.keys`,
+  `Afiseaza propozitia: “Prietenii mei sunt Larry,
+  Steven si Carol.” folosind Object.keys`,
 );
 var message = 'Prietenii mei sunt ';
 Object.keys(person.friends).forEach(function (friendName, index, friendNames) {
@@ -138,11 +140,7 @@ console.log(message);
 console.warn(`Folosind bucla, afiseaza mai multe propozitii
 (cate una per console.log()) care sa afiseze: “Larry are xx ani. Steven are …”`);
 Object.keys(person.friends).forEach(function (friendName) {
-  var skillKeys = Object.keys(person.skills);
-  skillKeys.forEach(function (skill) {
-    if (person.skills[skill] !== true) {
-      return;
-    }
-    console.log(`${person.name} cunoaste: ${skill}.`);
-  });
+  var friend = person.friends[friendName];
+
+  console.log(`${friend.name} are ${friend.age} ani.`);
 });
