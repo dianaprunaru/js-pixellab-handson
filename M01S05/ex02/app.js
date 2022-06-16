@@ -12,8 +12,8 @@ console.warn(
 );
 const firstRectangle = calculateRectangleArea(5, 3);
 const secondRectangle = calculateRectangleArea(3, 2);
-const totalSurface = firstRectangle + secondRectangle;
-console.log(totalSurface);
+console.log(firstRectangle);
+console.log(secondRectangle);
 
 console.warn(
   `3. Calculeaza intr-o variabila numita squareSurface aria

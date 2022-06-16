@@ -32,4 +32,23 @@ console.warn(
   Afla si afiseaza cate kilograme de paine produce un camp de 300 pe 200
   metri stiind ca dintr-un kilogram de faina ies 2.5 kg de paine.`,
 );
-const field04Surface = calculateRectangleArea(300, 200);
+
+const flour = 32;
+const flourFieldSurface = calculateRectangleArea(300, 200);
+const flourProduction = flourFieldSurface * flour;
+const bread = flourProduction / 2.5;
+
+console.log(bread);
+
+console.warn(`4. Dar doua campuri de 150 pe 200 si 500 pe 300 in total?`);
+const flourField02Surface = calculateRectangleArea(150, 200);
+const flourProduction02 = flourField02Surface * flour;
+const bread02 = flourProduction02 / 2.5;
+
+const flourField03Surface = calculateRectangleArea(500, 300);
+const flourProduction03 = flourField03Surface * flour;
+const bread03 = flourProduction03 / 2.5;
+
+console.log(bread02 + bread03);
+
+// Nu imi dau seama ce gresesc aici, ca pixeltabul nu se inverzeste.
