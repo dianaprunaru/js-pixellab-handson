@@ -81,7 +81,7 @@ person.friends.forEach(function (friend) {
     sumYears += friend.age;
   }
 });
-console.log(sumYears);
+console.log(sumYears.toString());
 
 console.warn(
   `5. Folosind forEach, afiseaza suma anilor de nastere ai persoanelor
@@ -94,7 +94,7 @@ person.friends.forEach(function (friend) {
     sumYearsOddAge += birthYear;
   }
 });
-console.log(sumYearsOddAge);
+console.log(sumYearsOddAge.toString());
 
 console.warn(
   `6. Afiseaza diferenta de varsta dintre persoana si prietenii din arrayul
@@ -125,7 +125,7 @@ person.friends.forEach(function (friend) {
     ageDiff +
     ' ani. ';
 });
-console.log(message);
+console.log(message.trim());
 
 console.warn(
   `8. Folosind metoda reverse si apoi forEach, afiseaza in
@@ -172,7 +172,7 @@ var sumAge = 0;
 person.friends.forEach(function (friend) {
   sumAge += friend.age;
 });
-console.log(sumAge);
+console.log(sumAge.toString());
 
 console.warn(
   `13. Folosind forEach, afiseaza suma anilor de nastere a persoanelor`,

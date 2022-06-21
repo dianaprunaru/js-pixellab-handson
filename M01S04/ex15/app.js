@@ -1,7 +1,7 @@
 var person = {
-  name: 'Dragos',
-  surname: 'Iordache',
-  age: 32,
+  name: 'Diana',
+  surname: 'Prunaru',
+  age: 31,
   petOwner: false,
   skills: [
     'html',
