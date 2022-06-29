@@ -59,6 +59,37 @@ class Car {
     this.lightBack.style.backgroundColor = 'white';
   }
 
+  changeCapColor() {
+    this.hubCapBack.style.backgroundColor = 'green';
+    this.hubCapFront.style.backgroundColor = 'green';
+  }
+
+  changeTireColor() {
+    this.wheelBack.style.backgroundColor = 'magenta';
+    this.wheelFront.style.backgroundColor = 'magenta';
+  }
+
+  areHazardsOn = false;
+  turnHazardsOn() {
+    this.areHazardsOn = true;
+    this.lightBack.style.backgroundColor = 'yellow';
+    this.lightFront.style.backgroundColor = 'yellow';
+  }
+
+  turnHazardsOff() {
+    this.areHazardsOn = false;
+    this.lightBack.style.backgroundColor = 'white';
+    this.lightFront.style.backgroundColor = 'white';
+  }
+
+  toggleHazards() {
+    this.turnHazardsOn();
+
+    setInterval(() => {
+      this.turnHazardsOff();
+    }, 500);
+  }
+
   render() {
     document.body.append(this.frame);
   }
@@ -66,4 +97,10 @@ class Car {
 
 const car01 = new Car(140, 140, 'teal');
 car01.render();
-car01.moveTo(500, 600);
+car01.moveTo(250, 250);
+
+const car02 = new Car(100, 100, 'red');
+car02.changeCapColor('green');
+car02.changeTireColor('magenta');
+car02.render();
+car02.moveTo(400, 400);
