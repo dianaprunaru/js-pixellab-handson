@@ -11,7 +11,7 @@ const $p = $('<p></p>', {
   text: 'Textul care trebuie sa apara in paragraf',
   class: 'clase de css',
 });
-$p.appendTo($('body'));
+$p.appendTo($body);
 
 const $p2 = $('<p>', {
   id: 'message',
@@ -30,6 +30,54 @@ $('<span>', {
   text: 'ParolaMea',
 }).appendTo($p2);
 
+const $container = $('.container');
 $('<h2>', {
   text: 'Mesaje',
-}).prependTo($('.container'));
+}).prependTo($container);
+
+const $navigation = $('<div>', {
+  class: 'navigation',
+});
+
+$container.after($navigation);
+
+const $firstLink = $('<a>', {
+  text: 'First Link',
+  class: 'nav-link',
+  title: 'First Link',
+  href: 'https://google.com',
+}).appendTo($navigation);
+
+$firstLink.before(
+  $('<h2>', {
+    text: 'Navigatie',
+  }),
+);
+
+$firstLink.prepend(
+  $('<sup>', {
+    text: 1,
+    style: 'text-decoration: none',
+  }),
+);
+
+$container.before(
+  $('<h1>', {
+    text: 'jQuery is old',
+  }),
+);
+
+const $p3 = $('<p>', {
+  id: 'message',
+  text: `Documentatia jQuery poate fi gasita `,
+});
+$body.append($p3);
+
+const $secondLink = $('<a>', {
+  text: 'aici',
+  class: 'nav-link',
+  title: 'aici',
+  href: 'https://google.com',
+}).appendTo($p3);
+
+$p3.html($p3.html() + `.`);
