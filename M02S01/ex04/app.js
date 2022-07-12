@@ -1,4 +1,8 @@
 class Car {
+  areLightsOn = false;
+  intervalId = 0;
+  initialLightState = false;
+
   constructor(positionX, positionY, color) {
     this.positionX = positionX;
     this.positionY = positionY;
@@ -15,10 +19,12 @@ class Car {
 
     this.carTop = document.createElement('div');
     this.carTop.classList.add('car__top');
+    this.carTop.style.backgroundColor = this.color;
     this.car.append(this.carTop);
 
     this.carBody = document.createElement('div');
     this.carBody.classList.add('car__body');
+    this.carBody.style.backgroundColor = this.color;
     this.car.append(this.carBody);
 
     this.lightBack = document.createElement('div');
@@ -47,8 +53,50 @@ class Car {
   moveTo(positionX, positionY) {
     this.positionX = positionX;
     this.positionY = positionY;
+
     this.frame.style.left = `${this.positionX}px`;
     this.frame.style.top = `${this.positionY}px`;
+  }
+
+  turnLightsOn() {
+    this.lightFront.style.backgroundColor = 'yellow';
+    this.lightBack.style.backgroundColor = 'red';
+
+    this.areLightsOn = true;
+  }
+
+  turnLightsOff() {
+    this.lightFront.style.backgroundColor = 'white';
+    this.lightBack.style.backgroundColor = 'white';
+
+    this.areLightsOn = false;
+  }
+
+  toggleHazards() {
+    const self = this;
+
+    if (self.intervalId !== 0) {
+      clearInterval(self.intervalId);
+      self.intervalId = 0;
+
+      if (self.initialLightState === true) {
+        self.turnLightsOn();
+      } else {
+        self.turnLightsOff();
+      }
+
+      return;
+    }
+
+    self.initialLightState = self.areLightsOn;
+
+    self.intervalId = setInterval(function () {
+      if (self.areLightsOn === true) {
+        self.turnLightsOff();
+      } else {
+        self.turnLightsOn();
+      }
+    }, 1000);
   }
 
   engageBreak() {
@@ -59,48 +107,9 @@ class Car {
     this.lightBack.style.backgroundColor = 'white';
   }
 
-  changeCapColor() {
-    this.hubCapBack.style.backgroundColor = 'green';
-    this.hubCapFront.style.backgroundColor = 'green';
-  }
-
-  changeTireColor() {
-    this.wheelBack.style.backgroundColor = 'magenta';
-    this.wheelFront.style.backgroundColor = 'magenta';
-  }
-
-  areHazardsOn = false;
-  turnHazardsOn() {
-    this.areHazardsOn = true;
-    this.lightBack.style.backgroundColor = 'yellow';
-    this.lightFront.style.backgroundColor = 'yellow';
-  }
-
-  turnHazardsOff() {
-    this.areHazardsOn = false;
-    this.lightBack.style.backgroundColor = 'white';
-    this.lightFront.style.backgroundColor = 'white';
-  }
-
-  toggleHazards() {
-    this.turnHazardsOn();
-
-    setInterval(() => {
-      this.turnHazardsOff();
-    }, 500);
-  }
-
   render() {
     document.body.append(this.frame);
   }
 }
 
-const car01 = new Car(140, 140, 'teal');
-car01.render();
-car01.moveTo(250, 250);
-
-const car02 = new Car(100, 100, 'red');
-car02.changeCapColor('green');
-car02.changeTireColor('magenta');
-car02.render();
-car02.moveTo(400, 400);
+const car01 = new Car(300, 16, 'teal').render().turnLightsOn();
