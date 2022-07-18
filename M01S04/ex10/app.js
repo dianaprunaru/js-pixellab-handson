@@ -47,7 +47,6 @@ console.warn(
   `2. In mod similar, afiseaza skillurile care
 contin litera a.`,
 );
-
 person.skills.forEach(function (skill) {
   if (skill.includes('a') === true) {
     console.log(skill);
@@ -58,7 +57,6 @@ console.warn(
   `3. Folosind forEach afiseaza propozitia: "Prietenii mei se
 numesc xxx yyy, xxx yyy si xxx yyy."`,
 );
-
 var message = 'Prietenii mei se numesc ';
 person.friends.forEach(function (friend, index) {
   var punctuation = ', ';

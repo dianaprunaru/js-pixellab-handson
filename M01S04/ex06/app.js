@@ -1,7 +1,7 @@
 var person = {
   name: 'Diana',
   surname: 'Prunaru',
-  age: 31,
+  age: 38,
   petOwner: false,
   skills: [
     'html',
@@ -33,7 +33,7 @@ var person = {
 };
 
 console.warn(
-  `Folosind obiectul person si un for, afiseaza in consola
+  `1. Folosind obiectul person si un for, afiseaza in consola
   skillurile de pe pozitiile pare ale arrayului.`,
 );
 for (var i = 0; i < person.skills.length; i++) {
@@ -44,7 +44,7 @@ for (var i = 0; i < person.skills.length; i++) {
   }
 }
 
-console.warn(`In mod similar, afiseaza skillurile care NU incep cu j.`);
+console.warn(`2. In mod similar, afiseaza skillurile care NU incep cu j.`);
 for (var i = 0; i < person.skills.length; i++) {
   var skill = person.skills[i];
 
@@ -54,7 +54,7 @@ for (var i = 0; i < person.skills.length; i++) {
 }
 
 console.warn(
-  `Folosind un for afiseaza propozitia: "Prietenii mei se numesc xxx yyy, xxx yyy, xxx yyy."`,
+  `3. Folosind un for afiseaza propozitia: "Prietenii mei se numesc xxx yyy, xxx yyy, xxx yyy."`,
 );
 var message = 'Prietenii mei se numesc: ';
 for (var i = 0; i < person.friends.length; i++) {
@@ -71,34 +71,43 @@ for (var i = 0; i < person.friends.length; i++) {
 }
 console.log(message);
 
-console.warn(`Folosind un for, afiseaza numarul total de ani pe care
+console.warn(`4. Folosind un for, afiseaza numarul total de ani pe care
 il au persoanele din arrayul friends, doar daca varsta
 este mai mare sau egala cu 30 de ani.
 `);
+
+var sum = 0;
 for (var i = 0; i < person.friends.length; i++) {
   var friend = person.friends[i];
-  sum += friend.age;
+  var friendAge = friend.age;
 
-  if (friend.age >= 30) {
-    console.log(sum);
+  if (friendAge >= 30) {
+    sum += friendAge;
   }
+  console.log(sum.toString());
 }
+
 // aici, Pixeltabul nu se inverzeste. Ce anume gresesc?
 
-console.warn(`Folosind un for, afiseaza suma anilor de nastere a persoanelor.`);
+console.warn(
+  `5. Folosind un for, afiseaza suma anilor de nastere a persoanelor.`,
+);
 for (var i = 0; i < person.friends.length; i++) {
-  sumPersons += 2022 - person.friends.age + (2022 - person.age);
-
-  console.log(sumPersons);
+  var sumPersons;
+  sumPersons =
+    2022 -
+    person.friends[0].age +
+    (2022 - person.friends[1].age) +
+    (2022 - person.friends[2].age);
 }
+console.log(sumPersons.toString());
 
 console.warn(
-  ` Afiseaza diferenta de varsta dintre persoana si prietenii din arrayul
+  `6. Afiseaza diferenta de varsta dintre persoana si prietenii din arrayul
   friends doar daca aceasta este mai mare de 2 ani.`,
 );
 for (var i = 0; i < person.friends.length; i++) {
   var friend = person.friends[i];
-
   var ageDiff = Math.abs(person.age - friend.age);
 
   if (ageDiff > 2) {
@@ -106,8 +115,29 @@ for (var i = 0; i < person.friends.length; i++) {
   }
 }
 
+console.warn(`7. Afiseaza fraza: "Intre Dragos si Larry este o diferenta de xx ani. Intre Dragos si Steven... ", doar
+daca varsta prietenului este impara.`);
+var message = '';
+for (var i = 0; i < person.friends.length; i++) {
+  var friend = person.friends[i];
+  var friendAge = friend.age;
+  var difference = person.age - friendAge;
+
+  if (friendAge % 2 !== 0) {
+    console.log(
+      'Intre ' +
+        person.name +
+        ' si ' +
+        friend.name +
+        ' este o diferenta de ' +
+        difference +
+        ' ani.',
+    );
+  }
+}
+
 console.warn(
-  `Folosind proprietatea length a arrayului skills si o bucla for,
+  `8. Folosind proprietatea length a arrayului skills si o bucla for,
   afiseaza in ordine inversa elementele arrayului skills. Atentie,
   va trebui sa numeri invers, de la length la 0.`,
 );
@@ -116,7 +146,7 @@ for (var i = person.skills.length - 1; i >= 0; i--) {
 }
 
 console.warn(
-  `Folosind obiectul person si un for, afiseaza in consola
+  `9. Folosind obiectul person si un for, afiseaza in consola
   skillurile pe care le are persoana `,
 );
 
@@ -125,7 +155,7 @@ for (var i = 0; i < person.skills.length; i++) {
   console.log(skill);
 }
 
-console.warn('In mod similar, afiseaza skillurile care incep cu c');
+console.warn('10. In mod similar, afiseaza skillurile care incep cu c');
 for (var i = 0; i < person.skills.length; i++) {
   var skill = person.skills[i];
 
@@ -135,10 +165,9 @@ for (var i = 0; i < person.skills.length; i++) {
 }
 
 console.warn(
-  'Folosind un for afiseaza propozitia: "Numele de familie ale prietenilor mei sunt: xxx, xxx, xxx."',
+  '11. Folosind un for afiseaza propozitia: "Numele de familie ale prietenilor mei sunt: xxx, xxx, xxx."',
 );
-var message = 'Numele de familie ale prietenilor meu sunt:';
-
+var message = 'Numele de familie ale prietenilor mei sunt: ';
 for (var i = 0; i < person.friends.length; i++) {
   var friend = person.friends[i];
   var punctuation = ', ';
@@ -147,21 +176,23 @@ for (var i = 0; i < person.friends.length; i++) {
     punctuation = '.';
   }
 
-  message = message + ' ' + friend.surname + punctuation;
+  message = message + friend.surname + punctuation;
 }
 console.log(message);
 
 console.warn(
-  'Folosind un for, afiseaza numarul total de ani pe care il au persoanele din arrayul friends',
+  '12. Folosind un for, afiseaza numarul total de ani pe care il au persoanele din arrayul friends',
 );
+var sum = 0;
 for (var i = 0; i < person.friends.length; i++) {
-  var friendsAge = (sum += person.friends.age[i]);
-
-  console.log(friendsAge);
+  var friend = person.friends[i];
+  var friendAge = friend.age;
+  sum += friendAge;
 }
+console.log(sum.toString());
 
 console.warn(
-  'Afiseaza diferenta de varsta dintre persoana si prietenii din arrayul friends. ',
+  '13. Afiseaza diferenta de varsta dintre persoana si prietenii din arrayul friends. ',
 );
 for (i = 0; i < person.friends.length; i++) {
   var friend = person.friends[i];
@@ -172,12 +203,17 @@ for (i = 0; i < person.friends.length; i++) {
 }
 
 console.warn(
-  'Afiseaza fraza: "Intre Dragos si Larry este o diferenta de xx ani. Intre Dragos si Steven... ". Repeta pentru tot arrayul friends.',
+  '14. Afiseaza fraza: "Intre Dragos si Larry este o diferenta de xx ani. Intre Dragos si Steven... ". Repeta pentru tot arrayul friends.',
 );
 var message = '';
 for (var i = 0; i < person.friends.length; i++) {
   var friend = person.friends[i];
-  var diff = person.age - friend.age;
+  var friendAge = friend.age;
+  var diff = person.age - friendAge;
+
+  if (i == person.friends.length - 1) {
+    punctuation = '.';
+  }
 
   message =
     'Intre ' +
@@ -186,25 +222,22 @@ for (var i = 0; i < person.friends.length; i++) {
     friend.name +
     ' este o diferenta de ' +
     diff +
-    ' ani.';
+    ' ani' +
+    punctuation;
+  console.log(message);
 }
-console.log(message);
 
 console.warn(
-  'Afiseaza fraza “Prietenii mei sunt: xxx yyy, xxx yyy, xxx yyy.” in ordine inversa a arrayului de prieteni. (Numarand de la length la 0).',
+  '15. Afiseaza fraza “Prietenii mei sunt: xxx yyy, xxx yyy, xxx yyy.” in ordine inversa a arrayului de prieteni. (Numarand de la length la 0).',
 );
-onsole.warn(
-  `Folosind un for afiseaza propozitia: "Prietenii mei se numesc xxx yyy, xxx yyy, xxx yyy."`,
-);
-var message = 'Prietenii mei se numesc: ';
+var message = 'Prietenii mei sunt: ';
+var punctuation = ', ';
+
 for (var i = person.friends.length - 1; i >= 0; i--) {
   var friend = person.friends[i];
-  var punctuation = ', ';
-
-  if (i === person.friends.length - 1) {
+  if (i === 0) {
     punctuation = '.';
   }
-
-  message = message + friend.name + ' ' + friend.surname + punctuation;
+  message += friend.name + ' ' + friend.surname + punctuation;
 }
 console.log(message);

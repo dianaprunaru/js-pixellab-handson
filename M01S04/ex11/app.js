@@ -34,7 +34,7 @@ var person = {
 };
 
 console.warn(
-  `Folosind Object.keys() pe proprietatea skills, afiseaza
+  `1. Folosind Object.keys() pe proprietatea skills, afiseaza
   abilitatile persoanei daca acestea sunt true. Folosind
   propozitii de forma: “person.name cunoaste: html.”
   “person.name cunoaste: javaScript.”`,
@@ -48,7 +48,7 @@ skillKeys.forEach(function (skill) {
 });
 
 console.warn(
-  `Prin aceeasi metoda, afiseaza o lista inversata cu
+  `2. Prin aceeasi metoda, afiseaza o lista inversata cu
   numele complet inversat al prietenilor. `,
 );
 Object.keys(person.friends)
@@ -60,7 +60,7 @@ Object.keys(person.friends)
   });
 
 console.warn(
-  `Afiseaza propozitia: “Prietenii mei sunt Larry,
+  `3. Afiseaza propozitia: “Prietenii mei sunt Larry,
   Steven si Carol.” folosind Object.keys`,
 );
 var message = 'Prietenii mei sunt ';
@@ -84,7 +84,7 @@ Object.keys(person.friends).forEach(function (friendName, index, friendNames) {
 console.log(message);
 
 console.warn(
-  `Folosind bucla, afiseaza mai multe propozitii
+  `4. Folosind bucla, afiseaza mai multe propozitii
   (cate una per console.log()) care sa afiseze:
   “Diferenta de varsta intre Larry si Dragos
   este de xxx ani.” etc…`,
@@ -98,14 +98,14 @@ Object.keys(person.friends).forEach(function (friendName) {
   );
 });
 
-console.warn(`Folosind Object.keys() pe proprietatea skills,
+console.warn(`5. Folosind Object.keys() pe proprietatea skills,
 afiseaza toate abilitatile din obiectul skills.`);
 Object.keys(person.skills).forEach(function (skill) {
   console.log(skill);
 });
 
 console.warn(
-  `Prin aceeasi metoda, afiseaza o lista cu numele complet al prietenilor.`,
+  `6. Prin aceeasi metoda, afiseaza o lista cu numele complet al prietenilor.`,
 );
 Object.keys(person.friends).forEach(function (friendName) {
   var friend = person.friends[friendName];
@@ -114,7 +114,7 @@ Object.keys(person.friends).forEach(function (friendName) {
 });
 
 console.warn(
-  `Afiseaza propozitia: “Prietenii mei sunt Larry Larryson,
+  `7. Afiseaza propozitia: “Prietenii mei sunt Larry Larryson,
   Steven Stevenson, Carol Carolson si Andra Andrason.” folosind Object.keys()`,
 );
 var message = 'Prietenii mei sunt ';
@@ -137,7 +137,7 @@ Object.keys(person.friends).forEach(function (friendName, index, friendNames) {
 });
 console.log(message);
 
-console.warn(`Folosind bucla, afiseaza mai multe propozitii
+console.warn(`8. Folosind bucla, afiseaza mai multe propozitii
 (cate una per console.log()) care sa afiseze: “Larry are xx ani. Steven are …”`);
 Object.keys(person.friends).forEach(function (friendName) {
   var friend = person.friends[friendName];

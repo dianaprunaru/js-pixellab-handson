@@ -3,14 +3,18 @@ var inputWidth = document.getElementById('width');
 var elementResult = document.getElementById('result');
 var form = document.querySelector('form');
 
-form.addEventListener('submit', function (event) {
-  var length = inputLength.value || 0;
-  var width = inputWidth.value || 0;
-  var result = 0;
+form.addEventListener(
+  'submit',
+  function (event) {
+    var length = inputLength.value || 0;
+    var width = inputWidth.value || 0;
+    var result = 0;
 
-  result = length * width;
+    result = length * width;
 
-  elementResult.innerText = result;
+    elementResult.innerText = result;
 
-  event.preventDefault();
-});
+    event.preventDefault();
+  },
+  false,
+);

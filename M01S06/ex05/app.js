@@ -1,4 +1,4 @@
-// IIFE - immedietaly invoked function expression
+// IIFE - immediately invoked function expression
 (function () {
   document.addEventListener('DOMContentLoaded', function () {
     const showButton = document.querySelector('#showButton');

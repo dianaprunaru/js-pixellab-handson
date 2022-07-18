@@ -27,7 +27,7 @@ console.warn(
 );
 console.log((myArray.length.toString() - myArray[5]).toString());
 
-console.warn(`Afiseaza suma numerelor de pe pozitia 1 si 3.`);
+console.warn(`Afiseaza suma numerelor de pe pozitiile 1 si 3.`);
 console.log((myArray[1] + myArray[3]).toString());
 
 console.warn(`Afiseaza produsul numerelor de pe pozitia 0 si 5`);

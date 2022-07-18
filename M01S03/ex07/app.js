@@ -25,6 +25,7 @@ var person = {
 
 var difference = (2022 - person.birthYear - person.pets[0]).toString();
 var petName = person.pets[0].name;
+console.log(petName);
 
 console.warn(
   `Afiseaza propozitia: “Numele meu este: xxx yyy si am x animale.”. Nu uita de proprietatea length a arrayului pets. `,
@@ -63,6 +64,8 @@ console.log((2022 - person.pets[2].age).toString());
 // Aici nu mai stiu cum se face
 console.warn(`Calculeaza si salveaza in variabila difference diferenta de ani dintre persoana si animalul de pe pozitia 0 si afiseaza aceasta diferenta. Foloseste anul curent.
 `);
+var personAge = 2022 - person.birthYear;
+var difference = personAge - person.pets[0].age;
 console.log(difference);
 
 console.warn(
@@ -81,10 +84,21 @@ console.log(
 console.warn(
   `Afiseaza propozitia “ firstName, pet1, pet2, pet3 locuiesc toti in aceeasi casa” (folosind bracket notation pe arrayul pets)`,
 );
+console.log(
+  person.firstName +
+    ', ' +
+    person.pets[0].name +
+    ', ' +
+    person.pets[1].name +
+    ', ' +
+    person.pets[2].name +
+    ' locuiesc toti in aceeasi casa.',
+);
 
 console.warn(
   `Calculeaza si afiseaza diferenta de varsta dintre animalul de pe pozitia 0 si cel de pe pozitia 2 `,
 );
+console.log(person.pets[0].age - person.pets[2].age);
 
 console.warn(
   `Afiseaza propozitia: “Ma numesc xxx yyy, m-am nascut in birthYear si codul meu postal este: zipCode”`,

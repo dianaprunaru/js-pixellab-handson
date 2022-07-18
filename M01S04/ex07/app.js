@@ -26,7 +26,7 @@ var friends = [
 ];
 
 console.warn(
-  `Folosind o bucla for afiseaza proprietatea
+  `1. Folosind o bucla for afiseaza proprietatea
   surname a tuturor obiectelor din arrayul friends.`,
 );
 for (var i = 0; i < friends.length; i++) {
@@ -36,7 +36,7 @@ for (var i = 0; i < friends.length; i++) {
 }
 
 console.warn(
-  `Afiseaza numele complet inversat al tuturor prietenilor,
+  `2. Afiseaza numele complet inversat al tuturor prietenilor,
   insa o data ce l-ai gasit pe steven, opreste bucla
   cu ajutorul keywordului break si afiseaza propozitia:
   “M-am oprit la Stevenson Steven.”.`,
@@ -53,7 +53,7 @@ for (var i = 0; i < friendsLength; i++) {
 }
 
 console.warn(
-  `Folosind keywordul continue, afiseaza numele complet
+  `3. Folosind keywordul continue, afiseaza numele complet
   inversat al prietenilor, doar daca numarul de caractere
   total al numelor lor este mai mare de 13 sub forma
   de propozitii “Prenume Nume are mai mult de
@@ -72,7 +72,7 @@ for (var i = 0; i < friendsLength; i++) {
 }
 
 console.warn(
-  'Folosind o bucla for afiseaza proprietatea name a tuturor obiectelor din arrayul friends.',
+  '4. Folosind o bucla for afiseaza proprietatea name a tuturor obiectelor din arrayul friends.',
 );
 for (var i = 0; i < friends.length; i++) {
   var friend = friends[i];
@@ -80,7 +80,7 @@ for (var i = 0; i < friends.length; i++) {
   console.log(friend.name);
 }
 
-console.warn('Afiseaza numele complet al tuturor prietenilor.');
+console.warn('5. Afiseaza numele complet al tuturor prietenilor.');
 for (var i = 0; i < friends.length; i++) {
   var friend = friends[i];
 
@@ -88,7 +88,9 @@ for (var i = 0; i < friends.length; i++) {
 }
 
 console.warn(
-  'Folosind keywordul break, afiseaza numele complet al prietenilor dar opeste bucla la primul surname care are numarul de caractere mai mare sau egal decat 9 si afiseaz-l intr-o propozitie de forma “M-am oprit la Nume Prenume.”.',
+  `6. Folosind keywordul break, afiseaza numele complet al prietenilor, dar opeste bucla
+  la primul surname care are numarul de caractere mai mare sau egal decat 9 si afiseaz-l
+  intr-o propozitie de forma “M-am oprit la Nume Prenume.”.`,
 );
 for (var i = 0; i < friends.length; i++) {
   var friend = friends[i];

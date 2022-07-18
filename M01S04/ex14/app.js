@@ -27,7 +27,7 @@ var person = {
 };
 
 console.warn(
-  `Afiseaza in consola folosind metoda forEach() numele fiecarui animal.`,
+  `1. Afiseaza in consola folosind metoda forEach() numele fiecarui animal.`,
 );
 Object.keys(person.pets).forEach(function (petName) {
   var pet = person.pets[petName];
@@ -35,7 +35,7 @@ Object.keys(person.pets).forEach(function (petName) {
   console.log(`${pet.name}`);
 });
 
-console.warn(`Folosind o bucla for afiseaza suma anilor animalelor.`);
+console.warn(`2. Folosind o bucla for afiseaza suma anilor animalelor.`);
 var sum = 0;
 for (var i = 0; i < person.pets.length; i++) {
   var pet = person.pets[i];
@@ -45,7 +45,7 @@ for (var i = 0; i < person.pets.length; i++) {
 console.log(sum);
 
 console.warn(
-  `Folosind forEach() afiseaza cate una pe linie propozitiile:
+  `3. Folosind forEach() afiseaza cate una pe linie propozitiile:
   “Twix este papagal si are 4 ani. Mars este caine si are… etc”.`,
 );
 
@@ -56,7 +56,7 @@ Object.keys(person.pets).forEach(function (petName) {
 });
 
 console.warn(
-  `Folosind o bucla for afiseaza cate una pe linie
+  `4. Folosind o bucla for afiseaza cate una pe linie
   propozitiile: “Intre Dragos si Twix este o diferenta
   de xx ani. Intre Dragos si Mars… ” (repeta pentru toate intrarile din array).`,
 );
@@ -70,7 +70,7 @@ Object.keys(person.pets).forEach(function (petName) {
 });
 
 console.warn(
-  `Folosind o bucla for afiseaza in ordine inversa
+  `5. Folosind o bucla for afiseaza in ordine inversa
   numele animalelor din array sub forma de propozitii:
   “Animalul meu se numeste xxxx.”.`,
 );
@@ -83,7 +83,7 @@ Object.keys(person.pets)
   });
 
 console.warn(
-  `Folosind o bucla for afla care este cel mai in varsta
+  `6. Folosind o bucla for afla care este cel mai in varsta
   animal si afiseaza propozitia: “xxx este cel mai batran
   animal pe care il am, dar intre noi este o diferenta de xx ani.”`,
 );
@@ -91,16 +91,12 @@ for (var i = 0; i < person.pets.length; i++) {
   var pet = person.pets[i];
   var oldest = Math.max(pet.age);
   var ageDiff02 = Math.abs(2022 - person.birthYear - oldest);
-
-  console.log(
-    `${pet.name} este cel mai batran animal pe care il am, dar intre noi este o diferenta de ${ageDiff02} ani.`,
-  );
 }
-// Aici s-a inverzit pixeltabul, dar nu stiu cum sa fac sa
-// afiseze propozitia doar pentru cel mai batran animal (Lion).
-// Ce ar trebui sa mai adaug?
+console.log(
+  `${pet.name} este cel mai batran animal pe care il am, dar intre noi este o diferenta de ${ageDiff02} ani.`,
+);
 
-console.warn(`Folosind o bucla forEach afiseaza propozitia:
+console.warn(`7. Folosind o bucla forEach afiseaza propozitia:
 “Am papagal, caine, hamster si pisica.”`);
 var message = 'Am ';
 Object.keys(person.pets).forEach(function (petName, index, petSpecies) {
