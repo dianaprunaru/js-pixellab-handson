@@ -1,3 +1,26 @@
 {
-  "persons": []
+  "persons": [
+    {
+      "id": "test",
+      "name": "Diana",
+      "surname": "Prunaru",
+      "skills": [
+        "html",
+        "css",
+        "js"
+      ]
+    },
+    {
+      "id": 1658430179791,
+      "name": "Done",
+      "surname": "Diana",
+      "skills": []
+    },
+    {
+      "id": 1658430180578,
+      "name": "",
+      "surname": "",
+      "skills": []
+    }
+  ]
 }

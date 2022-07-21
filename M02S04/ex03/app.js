@@ -13,6 +13,8 @@ const axis = {
 const arrowMap = {
   ArrowDown: 'y',
   ArrowUp: 'y',
+  ArrowLeft: 'x',
+  ArrowRight: 'x',
 };
 const direction = {
   N: 'back',
@@ -21,6 +23,8 @@ const direction = {
   E: 'fw',
   ArrowDown: 'fw',
   ArrowUp: 'back',
+  ArrowLeft: 'fw',
+  ArrowRight: 'back',
 };
 const hero = {
   x: 0,
